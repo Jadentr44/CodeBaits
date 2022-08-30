@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const matchupRoutes = require('./matchup-routes');
-const techRoutes = require('./tech-routes.js');
+const postRoute = require('./Post');
 
-router.use('/matchup', matchupRoutes);
-router.use('/tech', techRoutes);
+
+
+router.use('/post', postRoute);
 
 module.exports = router;
