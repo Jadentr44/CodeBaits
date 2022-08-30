@@ -11,7 +11,7 @@ const Home = ({posts}) => {
     return <Post info={e}/>
   })
   return (
-    <div vh-100>
+    <div className='mh-100' >
     <h1 className='w-100 text-center border-bottom border-dark'>Home</h1>
     <div className=''>
     {postComponents}
