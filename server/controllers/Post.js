@@ -8,7 +8,7 @@ module.exports = {
       return res.status(400).json({ message: 'Unable to create matchup' });
     }
 
-    res.status(200).json(matchup);
+    res.status(200).json(post);
   },
   async findAll({ body }, res) {
     const result = await Post.find().limit(15);
@@ -17,7 +17,7 @@ module.exports = {
       return res.status(404).json({ message: 'error finding posts' });
     }
 
-    res.status(200).json(matchup);
+    res.status(200).json(result);
   }
   
 };

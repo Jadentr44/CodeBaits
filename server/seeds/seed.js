@@ -1,12 +1,12 @@
 const db = require('../config/connection');
-const { Tech } = require('../models');
+const { Post } = require('../models');
 
-const techData = require('./techData.json');
+const postData = [{name:"guy111",summary:"here is an example post",technologies:["jquery","react"]},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"}]
 
 db.once('open', async () => {
-  await Tech.deleteMany({});
+  await Post.deleteMany({});
 
-  const technologies = await Tech.insertMany(techData);
+  await Post.insertMany(postData);
 
   console.log('Technologies seeded!');
   process.exit(0);
