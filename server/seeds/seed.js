@@ -1,7 +1,7 @@
 const db = require('../config/connection');
 const { Post } = require('../models');
 
-const postData = [{name:"guy111",summary:"here is an example post",technologies:["jquery","react"]},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"},{name:"guy111",technologies:["jquery","react"],summary:"here is an another post"}]
+const postData = [{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`},{name:"guy111",technologies:["javascript","react"],summary:"here is an another post",code:`console.log("hello world")`}]
 
 db.once('open', async () => {
   await Post.deleteMany({});

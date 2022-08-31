@@ -12,6 +12,10 @@ const post = new Schema({
   summary: {
     type: String,
     required:true,
+  },
+  code:{
+    type:String,
+    required:true,
   }
 });
 
