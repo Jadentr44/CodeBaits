@@ -32,7 +32,7 @@ export default function NewPost() {
     <input type="text" placeholder='technologies(single word)' id="tech" /><br />
     <input type="text" id='summary' placeholder='summary' /><br />
     
-    <textarea name="" id="code" cols="30" rows="10"></textarea><br />
+    <textarea  className='w-75' name="" id="code" cols="30" rows="10"></textarea><br />
      
     
     <button onClick={() => sendPost()}>send</button>

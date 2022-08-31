@@ -5,9 +5,11 @@ import axios from "axios";
 import Feed from "./componens/Feed";
 import NewPost from "./componens/NewPost";
 import SideNav from "./componens/SideNav";
+import FullPost from "./componens/FullPost";
 function App() {
   const [postData, setPostData] = useState([]);
   const [currentPage, setCurrentPage] = useState('home')
+  const [currentPost, setCurrentPost] = useState('a')
   useEffect(() => {
     
     getPost()
@@ -21,21 +23,23 @@ function App() {
   }
 
  const renderPage = () =>{
-    if(currentPage === 'home') return <Feed posts={postData} />
+    if(currentPage === 'home') return <Feed setCurrentPost={setCurrentPost} handlePageChange={handlePageChange} posts={postData} />
 
     if(currentPage === 'new') return <NewPost/>
+
+    if(currentPage === 'post') return <FullPost postID={currentPost}/>
  }
 
  const handlePageChange = (page) => setCurrentPage(page)
 
   return (
-    <div className="">
+    <div style={{overflowX:'hidden'}}>
       <div className="row ">
-        <div className="h-auto col-2  pr-0 mb-0">
+        <div className="h-auto col-2  pr-0 mb-0 d-flex justify-content-center">
           <SideNav getPost={getPost} handlePageChange={handlePageChange}/>
         </div>
 
-        <div className="col-8 p-0 border-end border-start border-dark ">
+        <div  className="col-8  p-0 border-end border-start border-dark   ">
           {renderPage()}
         </div>
 

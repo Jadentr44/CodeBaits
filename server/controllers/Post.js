@@ -24,6 +24,14 @@ module.exports = {
     }
 
     res.status(200).json(result);
+  },
+  async findById(req,res){
+    const result = await Post.findOne({ '_id': req.params.ID });
+
+    if (!result) {
+      return res.status(404).json({ message: 'error finding posts' });
+    }
+    res.status(200).json(result);
   }
   
 };
