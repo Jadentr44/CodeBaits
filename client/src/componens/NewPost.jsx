@@ -3,7 +3,7 @@ import axios from 'axios';
 import ReactMarkdown from 'react-markdown'
 import $ from 'jquery';
 
-export default function NewPost() {
+export default function NewPost({handlePageChange,setCurrentPost,getPost}) {
   const sendPost = () =>{
     let name = $('#userName').val(),
       summary = $("#summary").val(),
@@ -18,12 +18,14 @@ export default function NewPost() {
       summary:summary,
       code:code
     })
-    .then(function (response) {
-      console.log(response);
+    .then(function (res) {
+      if(res.status !== 200) return
+      getPost()
+      setCurrentPost(res.data._id)
+      handlePageChange("post")
     })
   }
   let summary = $('#userName').val()
-  console.log(summary)
   return (
     <div className='vh-100' >
     <h1 className='w-100 text-center border-bottom border-dark'>New Post</h1>

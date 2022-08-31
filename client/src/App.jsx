@@ -25,7 +25,7 @@ function App() {
  const renderPage = () =>{
     if(currentPage === 'home') return <Feed setCurrentPost={setCurrentPost} handlePageChange={handlePageChange} posts={postData} />
 
-    if(currentPage === 'new') return <NewPost/>
+    if(currentPage === 'new') return <NewPost handlePageChange={handlePageChange} setCurrentPost={setCurrentPost} getPost={getPost}/>
 
     if(currentPage === 'post') return <FullPost postID={currentPost}/>
  }
@@ -39,11 +39,11 @@ function App() {
           <SideNav getPost={getPost} handlePageChange={handlePageChange}/>
         </div>
 
-        <div  className="col-8  p-0 border-end border-start border-dark   ">
+        <div  className="col-8 vh-100 p-0    ">
           {renderPage()}
         </div>
 
-        <div className="col-2 p-0 ">panal</div>
+        <div className="text-center col-2 p-0 "><h1>Hot Post</h1></div>
       </div>
     </div>
   );

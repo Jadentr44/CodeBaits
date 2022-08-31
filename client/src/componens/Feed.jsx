@@ -11,7 +11,7 @@ const Home = ({posts,handlePageChange,setCurrentPost}) => {
     return <Post setCurrentPost={setCurrentPost} handlePageChange={handlePageChange} info={e}/>
   })
   return (
-    <div className='h-100' >
+    <div className='h-100 border-end border-start border-dark' >
     <h1 className='w-100 text-center border-bottom border-dark'>Home</h1>
     <div className=''>
     {postComponents}
